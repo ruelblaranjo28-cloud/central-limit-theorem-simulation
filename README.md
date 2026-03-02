@@ -12,11 +12,15 @@ Theoretical mean = 1/λ = 5
 Theoretical variance = (1/λ²)/n  
 
 
-## Visualization 
 
-clt_sampling_distribution.png
-clt_sampling2_distribution.png
-clt_sampling3_distribution.png
+## Visualization
+
+![Sampling Distribution 1](clt_sampling_distribution.png)
+
+![Sampling Distribution 2](clt_sampling2_distribution.png)
+
+![Sampling Distribution 3](clt_sampling3_distribution.png)
+
 
 ## Interpretation
 The histogram of sample means approximates a normal distribution, confirming the Central Limit Theorem.
