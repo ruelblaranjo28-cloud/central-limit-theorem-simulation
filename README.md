@@ -11,8 +11,14 @@ This project demonstrates the Central Limit Theorem (CLT) using simulations from
 Theoretical mean = 1/λ = 5  
 Theoretical variance = (1/λ²)/n  
 
-## Visualization
 
+## Visualization 
+![Sampling Distribution of the Mean](clt_sampling_distribution.png)
+
+## Visualization 2
+![Plot 2](clt_sampling2_distribution.png)
+
+## Visualization 3
 ![Sampling Distribution of the Mean](clt_sampling3_distribution.png)
 
 ## Interpretation
