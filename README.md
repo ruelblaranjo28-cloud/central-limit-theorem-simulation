@@ -1,5 +1,8 @@
 # Central Limit Theorem Simulation in R
 
+![Sampling Distribution](clt_banner.png)
+
+
 ## Overview
 This project demonstrates the Central Limit Theorem (CLT) using simulations from an exponential distribution.
 
