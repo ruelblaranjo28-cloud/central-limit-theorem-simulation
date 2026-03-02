@@ -14,7 +14,9 @@ Theoretical variance = (1/λ²)/n
 
 ## Visualization 
 ![Sampling Distribution of the Mean](clt_sampling_distribution.png)
+
 ![Plot 2](clt_sampling2_distribution.png)
+
 ![Sampling Distribution of the Mean](clt_sampling3_distribution.png)
 
 ## Interpretation
