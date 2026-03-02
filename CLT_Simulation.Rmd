@@ -1,0 +1,133 @@
+---
+title: "Central Limit Theorem Simulation Using Exponential Distribution"
+author: "Ruel Barredo Laranjo"
+date: "March 2026 (Updated from 2022 Coursework)"
+output: html_document
+---
+
+
+```r
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+set.seed(123)
+
+```
+
+
+
+## Introduction
+
+This project investigates the Central Limit Theorem (CLT) using simulations of the exponential distribution.
+
+We simulate 1000 samples of 40 exponentially distributed random variables with:
+
+λ (rate parameter) = 0.2
+
+Theoretical mean = 1/λ = 5
+
+Theoretical variance = (1/λ²)/n
+
+The objective is to:
+
+Compare sample mean to theoretical mean
+
+Compare sample variance to theoretical variance
+
+Demonstrate approximate normality of sample means
+
+🔧 ## Simulation Setup
+
+```{r simulation}
+lambda <- 0.2
+n <- 40
+num_sim <- 1000
+
+set.seed(123)
+
+sample_means <- replicate(num_sim, mean(rexp(n, lambda)))
+
+theoretical_mean <- 1 / lambda
+theoretical_variance <- (1 / lambda^2) / n
+```
+
+
+📊 2. Variance Comparison
+theoretical_variance <- (1 / lambda^2) / n
+sample_variance <- var(sample_means)
+
+theoretical_variance
+sample_variance
+Interpretation
+
+The simulated variance aligns closely with the theoretical variance predicted by the Central Limit Theorem.
+
+📉 3. Demonstrating Normality
+
+```{r}
+hist(sample_means,
+     probability = TRUE,
+     main = "Sampling Distribution of the Mean (n = 40)",
+     xlab = "Sample Mean",
+     col = "#4C72B0",
+     border = "white")
+
+curve(dnorm(x,
+            mean = theoretical_mean,
+            sd = sqrt(theoretical_variance)),
+      col = "red",
+      lwd = 2,
+      add = TRUE)
+
+legend("topright",
+       legend = c("Histogram", "Normal Curve"),
+       col = c("#4C72B0", "red"),
+       lwd = 2)
+```
+     
+     ## 4. Statistical Test of Normality
+
+
+```{r}
+shapiro.test(sample_means) 
+
+```
+      
+## Interpretation
+
+The simulated sample mean closely approximates the theoretical mean (5), confirming the Law of Large Numbers.
+The theoretical variance of the sampling distribution is also consistent with the observed sample variance, supporting the expected behavior described by the Central Limit Theorem.
+Although the Shapiro–Wilk test detects a slight deviation from perfect normality (p < 0.05), this is expected with a large number of simulations, as the test becomes highly sensitive. The histogram, normal curve overlay, and overall bell-shaped symmetry indicate that the distribution of sample means is approximately normal.
+This demonstrates that even when the underlying exponential distribution is right-skewed, the sampling distribution of the mean becomes approximately normal as the sample size increases, consistent with the Central Limit Theorem.
+
+
+🔄 Comparison: Raw Exponential vs Sample Means
+raw_exp <- rexp(1000, lambda)
+
+par(mfrow = c(1,2))
+
+hist(raw_exp,
+     main = "Raw Exponential Distribution",
+     col = "salmon")
+
+hist(sample_means,
+     main = "Sample Means Distribution",
+     col = "lightgreen")
+Interpretation
+
+The exponential distribution is highly skewed.
+
+The distribution of sample means is approximately symmetric and bell-shaped.
+
+This visual comparison strongly supports CLT.
+
+
+✅  Conclusion
+
+This simulation demonstrates the key principles of the Central Limit Theorem:
+The sample mean converges to the theoretical mean as the number of simulations increases.
+The sample variance approaches the theoretical variance of the sampling distribution.
+Even though the original exponential distribution is highly right-skewed, the sampling distribution of the mean becomes approximately normal as the sample size increases.
+These results reinforce foundational statistical theory that is essential in data science, particularly for inference, hypothesis testing, and predictive modeling.
+
+```{r}
