@@ -43,4 +43,4 @@ The histogram of sample means approximates a normal distribution, confirming the
 
 ## Author
 Ruel Laranjo  
-Junior Data Scientist
+Aspiring Data Scientist | Python | SQL | Machine Learning
