@@ -36,7 +36,7 @@ Compare sample variance to theoretical variance
 
 Demonstrate approximate normality of sample means
 
-🔧 ## Simulation Setup
+## Simulation Setup
 
 ```{r simulation}
 lambda <- 0.2
@@ -52,7 +52,7 @@ theoretical_variance <- (1 / lambda^2) / n
 ```
 
 
-📊 2. Variance Comparison
+2. Variance Comparison
 theoretical_variance <- (1 / lambda^2) / n
 sample_variance <- var(sample_means)
 
@@ -62,7 +62,7 @@ Interpretation
 
 The simulated variance aligns closely with the theoretical variance predicted by the Central Limit Theorem.
 
-📉 3. Demonstrating Normality
+3. Demonstrating Normality
 
 ```{r}
 hist(sample_means,
@@ -101,7 +101,7 @@ Although the Shapiro–Wilk test detects a slight deviation from perfect normali
 This demonstrates that even when the underlying exponential distribution is right-skewed, the sampling distribution of the mean becomes approximately normal as the sample size increases, consistent with the Central Limit Theorem.
 
 
-🔄 Comparison: Raw Exponential vs Sample Means
+Comparison: Raw Exponential vs Sample Means
 raw_exp <- rexp(1000, lambda)
 
 par(mfrow = c(1,2))
@@ -122,7 +122,7 @@ The distribution of sample means is approximately symmetric and bell-shaped.
 This visual comparison strongly supports CLT.
 
 
-✅  Conclusion
+Conclusion
 
 This simulation demonstrates the key principles of the Central Limit Theorem:
 The sample mean converges to the theoretical mean as the number of simulations increases.
